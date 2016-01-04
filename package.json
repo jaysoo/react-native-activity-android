@@ -1,0 +1,32 @@
+{
+  "name": "react-native-activity-android",
+  "version": "0.17.0",
+  "description": "Provides a method to pause Android app (Activity), as well as lifecycle hooks when app is paused and resumed.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaysoo/react-native-activity-android"
+  },
+  "files": [
+    "android",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "react-native",
+    "react",
+    "react-component",
+    "android"
+  ],
+  "author": "Jack Hsu",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4",
+    "sinon": "^1.17.2"
+  }
+}
