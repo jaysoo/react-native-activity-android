@@ -84,11 +84,12 @@ Lifecycle hooks.
 ```js
 import ActivityAndroid 'react-native-activity-android';
 
-ActivityAndroid.addEventListener('activityResume', () => {
-  console.log('app resumed');
-});
 ActivityAndroid.addEventListener('activityPause', () => {
-  console.log('app paused');
+  console.log('App is moved to the background');
+});
+
+ActivityAndroid.addEventListener('activityResume', () => {
+  console.log('App is moved to the foreground');
 });
 
 ActivityAndroid.removeEventListener('activityResume', callbackFn);
