@@ -73,6 +73,7 @@ import { BackAndroid } from 'react-native';
 import ActivityAndroid 'react-native-activity-android';
 
 BackAndroid.addEventListener('hardwareBackPress', () => {
+  // Note: callbacks are optional. 
   ActivityAndroid.moveTaskToBack(() => console.log('worked'), () => console.log('failed'));
   return false; // Don't exit the app.
 });

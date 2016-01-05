@@ -22,13 +22,7 @@ const Example = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
-        <Text style={styles.text} onPress={() => {
-          ActivityAndroid.moveTaskToBack(() => {
-            console.log('pause successful!');
-          }, () => {
-            console.log('pause failed');
-          });
-        }}>
+        <Text style={styles.text} onPress={ () => ActivityAndroid.moveTaskToBack() }>
           Press here to move this app to background
         </Text>
       </View>
