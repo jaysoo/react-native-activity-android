@@ -4,7 +4,7 @@ Provides a method to move Android apps to the background (instead of exiting), a
 the application is paused and resumed.
 
 Useful if you want to capture listen for `BackButton` press and pause your application.
- 
+
 ### Installation
 
 1. Install module
@@ -73,7 +73,7 @@ import { BackAndroid } from 'react-native';
 import ActivityAndroid 'react-native-activity-android';
 
 BackAndroid.addEventListener('hardwareBackPress', () => {
-  ActivityAndroid.moveTaskToBack();
+  ActivityAndroid.moveTaskToBack(() => console.log('worked'), () => console.log('failed'));
   return false; // Don't exit the app.
 });
 ```
