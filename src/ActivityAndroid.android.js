@@ -19,8 +19,8 @@ module.exports = (React, Set) => {
   );
 
   return {
-    moveTaskToBack(cb) {
-      React.NativeModules.ActivityAndroid.moveTaskToBack(cb);
+    moveTaskToBack(onSuccess = () => {}, onError = () => {}) {
+      return React.NativeModules.ActivityAndroid.moveTaskToBack(onSuccess, onError);
     },
     addEventListener(type, handler) {
       _eventHandlers[type] && _eventHandlers[type].add(handler);
