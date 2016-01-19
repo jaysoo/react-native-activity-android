@@ -16,7 +16,7 @@ describe('ActivityAndroid', () => {
       NativeModules: { ActivityAndroid: alc }
     };
 
-    sut = activityAndroidFactory(ReactStub, Set);
+    sut = activityAndroidFactory(ReactStub);
   });
 
   describe('addEventListener', () => {

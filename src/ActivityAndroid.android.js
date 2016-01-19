@@ -1,4 +1,4 @@
-module.exports = (React, Set) => {
+module.exports = (React) => {
   const DeviceEventEmitter = React.DeviceEventEmitter;
 
   const _eventHandlers = {
