@@ -1,4 +1,4 @@
-![https://travis-ci.org/jaysoo/react-native-activity-android](https://api.travis-ci.org/jaysoo/react-native-activity-android.svg) ![](https://img.shields.io/npm/dm/react-native-activity-android.svg?style=flat-square)
+![https://travis-ci.org/jaysoo/react-native-activity-android](https://api.travis-ci.org/jaysoo/react-native-activity-android.svg) ![https://www.npmjs.com/package/react-native-activity-android](https://img.shields.io/npm/dm/react-native-activity-android.svg?style=flat-square)
 
 
 ## react-native-activity-android
