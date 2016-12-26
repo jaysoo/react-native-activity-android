@@ -13,16 +13,14 @@ import java.util.Collections;
 import java.util.List;
 
 public class ActivityAndroidPackage implements ReactPackage {
-    private Activity mCurrentActivity;
+    public ActivityAndroidPackage() {
 
-    public ActivityAndroidPackage(Activity activity) {
-        mCurrentActivity = activity;
     }
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Arrays.<NativeModule>asList(
-            new ActivityAndroidModule(reactContext, mCurrentActivity)
+            new ActivityAndroidModule(reactContext)
         );
     }
 

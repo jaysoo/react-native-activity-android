@@ -15,11 +15,8 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 
 public class ActivityAndroidModule extends ReactContextBaseJavaModule implements LifecycleEventListener {
-  private Activity mCurrentActivity;
-
-  public ActivityAndroidModule(ReactApplicationContext reactContext, Activity activity) {
+  public ActivityAndroidModule(ReactApplicationContext reactContext) {
     super(reactContext);
-    mCurrentActivity = activity;
     reactContext.addLifecycleEventListener(this);
   }
 
@@ -30,7 +27,7 @@ public class ActivityAndroidModule extends ReactContextBaseJavaModule implements
 
   @ReactMethod
   public void moveTaskToBack(Callback onSuccess, Callback onError) {
-    boolean wasMoved = mCurrentActivity.moveTaskToBack(true);
+    boolean wasMoved = getCurrentActivity().moveTaskToBack(true);
 
     if (wasMoved) {
       onSuccess.invoke();
