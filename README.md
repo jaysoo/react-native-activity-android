@@ -52,7 +52,7 @@ Useful if you want to capture listen for `BackButton` press and pause your appli
           .setBundleAssetName("index.android.bundle")
           .setJSMainModuleName("index.android")
           .addPackage(new MainReactPackage())
-          .addPackage(new ActivityAndroidPackage(this))              // <---- Add here
+          .addPackage(new ActivityAndroidPackage())              // <---- Add here
           .setUseDeveloperSupport(BuildConfig.DEBUG)
           .setInitialLifecycleState(LifecycleState.RESUMED)
           .build();
