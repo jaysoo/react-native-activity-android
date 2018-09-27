@@ -1,6 +1,6 @@
 {
   "name": "react-native-activity-android",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Provides a method to pause Android app (Activity.moveTaskToBack), as well as lifecycle hooks when app is paused and resumed.",
   "main": "src/index.js",
   "scripts": {
