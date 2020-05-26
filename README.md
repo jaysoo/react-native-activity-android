@@ -34,32 +34,21 @@ Useful if you want to capture listen for `BackButton` press and pause your appli
     }
     ```
 
-4. Register module (in `MainActivity.java`)
+4. Register module (in `MainApplication.java`)
 
     ```
     import ca.jaysoo.activityandroid.ActivityAndroidPackage;          // <---- Import here
 
-    public class MainActivity extends Activity implements DefaultHardwareBackBtnHandler {
+    public class MainApplication extends Application implements ReactApplication {
       ......
 
       @Override
-      protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mReactRootView = new ReactRootView(this);
-
-        mReactInstanceManager = ReactInstanceManager.builder()
-          .setApplication(getApplication())
-          .setBundleAssetName("index.android.bundle")
-          .setJSMainModuleName("index.android")
-          .addPackage(new MainReactPackage())
-          .addPackage(new ActivityAndroidPackage(this))              // <---- Add here
-          .setUseDeveloperSupport(BuildConfig.DEBUG)
-          .setInitialLifecycleState(LifecycleState.RESUMED)
-          .build();
-
-        mReactRootView.startReactApplication(mReactInstanceManager, "ExampleRN", null);
-
-        setContentView(mReactRootView);
+      protected List<ReactPackage> getPackages() {
+        return Arrays.<ReactPackage>asList(
+          new MainReactPackage(),
+          ......,
+          new ActivityAndroidPackage()                               // <---- Add here
+        );
       }
 
       ......
@@ -73,12 +62,12 @@ Moving an application to the background.
 
 ```js
 import { BackAndroid } from 'react-native';
-import ActivityAndroid 'react-native-activity-android';
+import ActivityAndroid from 'react-native-activity-android';
 
 BackAndroid.addEventListener('hardwareBackPress', () => {
   // Note: callbacks are optional.
   ActivityAndroid.moveTaskToBack(() => console.log('worked'), () => console.log('failed'));
-  return false; // Don't exit the app.
+  return true; // Don't exit the app.
 });
 ```
 
